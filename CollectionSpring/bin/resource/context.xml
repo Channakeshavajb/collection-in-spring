@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="person" class="com.xworkz.spring.bean.Person">
+		<property name="list">
+			<list>
+				<value>madhu</value>
+				<value>raju</value>
+				<ref bean="book1" />
+				<bean class="com.xworkz.spring.bean.Book">
+					<property name="name" value="java"></property>
+					<property name="author" value="jame gosling"></property>
+					<property name="price" value="865"></property>
+				</bean>
+			</list>
+		</property>
+
+		<property name="set">
+			<set>
+				<value>yuvarajsingh</value>
+				<value>sehvag</value>
+				<ref bean="book1" />
+				<bean class ="com.xworkz.spring.bean.Book">
+					<property name="name" value="c++"></property>
+					<property name="author" value="strustood"></property>
+					<property name="price" value="652"></property>
+	</bean>
+</set>
+</property>
+
+	<property name="map">
+		<map>
+			<entry key="1" value="rahul dravid" />
+			<entry key="2" value="sachin tendulkar" />
+			<entry key="3" value-ref="book1" />
+			<entry key="4">
+				<bean class="com.xworkz.spring.bean.Book">
+					<property name="name" value="c"></property>
+					<property name="author" value="deniesRichie"></property>
+					<property name="price" value="965"></property>
+				</bean>
+			</entry>
+		</map>
+	</property>
+
+	<property name="booklist">
+		<list>
+			<ref bean="book1" />
+			<ref bean="book2" />
+		</list>
+	</property>
+</bean>
+
+	<bean id="book1" class="com.xworkz.spring.bean.Book">
+		<property name="name" value="ramayana"></property>
+		<property name="author" value="valmiki"></property>
+		<property name="price" value="500"></property>
+	</bean>
+
+	<bean id="book2" class="com.xworkz.spring.bean.Book">
+		<property name="name" value="mahabaratha"></property>
+		<property name="author" value="vyasa"></property>
+		<property name="price" value="750"></property>
+	</bean>
+</beans>
